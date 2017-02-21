@@ -19,9 +19,8 @@ answers = zeros(1,length(roots_3));
 m2 = 0;
 for i = 1:length(roots_3)
    answers(i) = g_prime(roots_3(i)); 
-   m2 = answers(i);
-   if m2 < answers(end-(end-i))
-      m2 = answers(end-(end-i)); 
+    if m2 < answers(i)
+        m2 = answers(i);
    end
 end
 display(answers)
