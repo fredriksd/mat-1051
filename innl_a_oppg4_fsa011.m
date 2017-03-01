@@ -1,3 +1,4 @@
+clear
 %Oppgave 4a)
 n = 10;
 a = zeros(1,n);

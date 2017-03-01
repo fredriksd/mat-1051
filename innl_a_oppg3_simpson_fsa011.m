@@ -1,15 +1,13 @@
+clear
+close all
 %3a)
 g = @(x) 1./(1+x.^2);
-clear feil
-
+iv = [0,3]; %intervall
 for n = 1:20
-    %n = 3;
-    iv = [0,3]; %intervall
     areal = simpson(g,iv,n);
     feil(n) = abs(atan(3)-areal);
 end
 display(areal)
-
 
 
 %3b)
@@ -25,7 +23,8 @@ ylim([-11,25])
 f5 = diff(f4,x,1);
 f5prime = matlabFunction(f5);
 roots = solve(f5 == 0, x);
-roots = [roots;a;b]; %Ønsker bare punkter i [a,b]
+roots = [roots;a;b]; %Legger til endepunktene.
+                     %Ønsker bare punkter i [a,b].
 
 m4 = 0;
 for i = 1:length(roots)
@@ -44,7 +43,7 @@ n_value = solve(e(x) == 0.0001, x);
 display(n_value)
 
 %3c) Faktisk feil 
-estimated_error = round(double(e(23.9)),4); %32400^(1/4) ? 23.9
+estimated_error = round(double(e(23.9)),5); %32400^(1/4) = 23.9
 display(estimated_error)
 semilogy(feil), grid on
 

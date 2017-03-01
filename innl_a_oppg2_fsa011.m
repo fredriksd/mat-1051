@@ -1,4 +1,6 @@
 %2a)
+clear
+close all
 
  syms x
  f = @(x) x.^5 - x + 1;
@@ -44,8 +46,8 @@ for i = 1:2
     xe(i) = c;
 end
 disp(['Ekstremalpunkter i ', num2str(round(xe,4))])
-disp(['Analytisk nullpunkt mellom [-2,0]: ',num2str(fzero(f_prime,-2))])
-disp(['Analytisk nullpunkt mellom [0, 2]: ',num2str(fzero(f_prime,0))])
+disp(['Analytisk nullpunkt mellom [-2,0]: ',num2str(round(fzero(f_prime,-2),4))])
+disp(['Analytisk nullpunkt mellom [0, 2]: ',num2str(round(fzero(f_prime,0),4))])
 
 %2c)
 
